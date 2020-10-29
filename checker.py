@@ -13,11 +13,15 @@ def transform(file):
     os.system('echo "'+iop[1]+'">>passwords.txt')
 
 def transform_big(file):
+    sts = 0
     with open(file) as f:
         for line in f:
           st(line)
+          print(sts)
+          sts+=1
 
 def st(line):
+  print()
   iop =line.split(':')
   os.system('echo "'+iop[0]+'">>resolved_base.txt')
   pol = iop[1].split('\n')
